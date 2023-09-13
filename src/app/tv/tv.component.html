@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="card movie_card" *ngFor="let tv of allTvs">
+        <a [routerLink]="['/tvdetails',tv.id]">
+          <img
+            [src]="imagePath + tv.poster_path"
+            class="card-img-top"
+            alt="..."
+          />
+        </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ tv.name }}</h5>
+        <p *ngIf="tv.toggleDiscription">
+          {{ tv.overview }}
+        </p>
+        <button class="btn btn-warning d-block m-1" 
+        >see Details</button>
+      </div>
+    </div>
+  </div>
+</div>
